@@ -1,0 +1,20 @@
+body {
+    background: #093028; 
+    background: -webkit-linear-gradient(to bottom, #237A57, #093028); 
+    background: linear-gradient(to bottom, #237A57, #093028); 
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+

@@ -1,0 +1,27 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block extrahead %}
+<title>Documentos</title>
+{% endblock extrahead %}
+
+
+{% block content %}
+<div class="container"></div>
+    <h1>Lista de documentos</h1>
+    {% if tdocumento %}
+    <ul>
+        {% for tdocumento in tdocumento %}
+        <li><b>tdocumento: </b> {{ tdocumento.nombre}} <b>Descripcion: </b>{{tdocumento.descripcion}}</li>
+        <a class="btn btn-danger" href="{% url 'eliminar_tdocumento' tdocumento.id %}">Eliminar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if mensaje %}
+    <div class="alert alert-succes" role="alert">
+        Documento eliminada exitosamente!
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

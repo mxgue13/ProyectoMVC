@@ -1,0 +1,18 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block extrahead %}
+<title>Añadir Persona</title>
+{% endblock extrahead %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Agregar nueva Persona</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

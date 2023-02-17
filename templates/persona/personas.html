@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block extrahead %}
+<title>Personas</title>
+{% endblock extrahead %}
+
+
+{% block content %}
+<div class="container"></div>
+    <h1>Lista de Personas</h1>
+    {% if personas %}
+        <ul>
+            {% for persona in personas %}
+            <li>
+                <b>Nombre: </b>{{ persona.nombres}}      <b>Apellidos: </b>{{ persona.apellidos}}         
+                <b>Telefono: </b>{{ persona.telefono}} <b>Usuario: </b>{{ persona.usuario}}
+                <b>Documento: </b>{{ persona.documento}}
+                <a class="btn btn-info" href="{% url 'editar_persona' persona.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'eliminar_persona' persona.id %}">Eliminar</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% if mensaje %}
+    <div class="alert alert-succes" role="alert">
+        Persona eliminada exitosamente!
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}
